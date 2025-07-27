@@ -15,11 +15,12 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 
 Route::post('/notes/store', [NoteController::class, 'store']);
-Route::put('/notes/update', [NoteController::class, 'update']);
+Route::put('/notes/update/{id}', [NoteController::class, 'update']);
 Route::get('/notes/{uuid}', [NoteController::class, 'getNotesByUuid']);
 
 Route::post('/khatmah/store', [KhatmahController::class, 'store']);
 Route::put('/khatmah/update', [KhatmahController::class, 'update']);
+Route::get('/khatmah/{uuid}', [KhatmahController::class, 'getKhatmahByUuid']);
 
 
 
